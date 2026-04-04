@@ -1,0 +1,62 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A user of the JuiceHealth Pro system.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "name": { "type": "string", "description": "User's display name" },
+        "email": { "type": "string", "format": "email", "description": "User's email address" },
+        "role": { "type": "string", "enum": ["user", "admin"], "description": "User's role" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Account creation timestamp" }
+      },
+      "required": ["uid", "name", "email", "role", "createdAt"]
+    },
+    "Recipe": {
+      "title": "Recipe",
+      "description": "A juice recipe or combination.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Name of the juice" },
+        "description": { "type": "string", "description": "Brief description" },
+        "ingredients": { "type": "array", "items": { "type": "string" }, "description": "List of ingredients" },
+        "instructions": { "type": "string", "description": "Preparation instructions" },
+        "benefits": { "type": "array", "items": { "type": "string" }, "description": "Health benefits" },
+        "authorId": { "type": "string", "description": "UID of the creator" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp" },
+        "isPublic": { "type": "boolean", "description": "Whether the recipe is visible to everyone" },
+        "tags": { "type": "array", "items": { "type": "string" }, "description": "Keywords for searching" }
+      },
+      "required": ["title", "ingredients", "authorId", "createdAt", "isPublic"]
+    },
+    "Consumption": {
+      "title": "Consumption",
+      "description": "A log of juice consumed by a user.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "UID of the user who consumed it" },
+        "recipeId": { "type": "string", "description": "ID of the recipe, if applicable" },
+        "customIngredients": { "type": "array", "items": { "type": "string" }, "description": "Ingredients if it was a custom combination" },
+        "quantityMl": { "type": "number", "description": "Amount consumed in milliliters" },
+        "consumedAt": { "type": "string", "format": "date-time", "description": "When it was consumed" },
+        "notes": { "type": "string", "description": "User notes about the consumption" }
+      },
+      "required": ["userId", "quantityMl", "consumedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User profiles"
+    },
+    "/recipes/{recipeId}": {
+      "schema": { "$ref": "#/entities/Recipe" },
+      "description": "Juice recipes and combinations"
+    },
+    "/consumptions/{consumptionId}": {
+      "schema": { "$ref": "#/entities/Consumption" },
+      "description": "Logs of consumed juices"
+    }
+  }
+}
