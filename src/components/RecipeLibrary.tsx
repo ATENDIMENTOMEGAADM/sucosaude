@@ -19,7 +19,7 @@ export const RecipeLibrary: React.FC<RecipeLibraryProps> = ({ onNavigate }) => {
       title: t('vision.title'), // "Transtornos da Visão"
       theme: 'Bebidas para os olhos',
       description: 'Descubra sucos e vitaminas ricos em antioxidantes, luteína e zeaxantina para proteger sua visão e prevenir o envelhecimento ocular.',
-      img: 'https://storage.googleapis.com/aistudio-user-uploads-us-central1/project-678502804561/c128f7d9-2d1f-4903-88a2-23c318262f22/image.png',
+      img: '/juices.png',
       icon: <Eye className="w-6 h-6" />,
       color: 'bg-blue-50',
       textColor: 'text-blue-600',

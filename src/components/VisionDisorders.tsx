@@ -109,27 +109,6 @@ export const VisionDisorders: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* Card — Infográfico: Sucos para a Saúde dos Olhos */}
-      <motion.div
-        variants={itemVariants}
-        className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-gray-100"
-      >
-        <div className="p-6 border-b border-gray-100 flex items-center gap-3">
-          <div className="bg-green-100 p-2.5 rounded-xl">
-            <Eye className="w-6 h-6 text-green-600" />
-          </div>
-          <div>
-            <h2 className="text-xl font-bold text-gray-900">Sucos para a Saúde dos Olhos</h2>
-            <p className="text-sm text-gray-500">Nutrientes essenciais para proteger e melhorar a visão</p>
-          </div>
-        </div>
-        <img
-          src="/juices.png"
-          alt="Sucos para a saúde dos olhos — verde, laranja e roxo"
-          className="w-full object-contain"
-        />
-      </motion.div>
-
       {userData && (
         <div id="personalized-plan">
           <PersonalizedPlanTable userData={userData} />
