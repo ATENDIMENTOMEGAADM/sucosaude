@@ -68,7 +68,7 @@ export const AIConsult: React.FC = () => {
     try {
       const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY as string });
       
-      const systemInstruction = `You are a health consultative AI for a juice tracking app called JuiceHealth Pro. 
+      const systemInstruction = `You are a health consultative AI for a juice tracking app called SucoSaúde. 
 You provide advice on juice recipes, health benefits of ingredients, and analyze the user's consumption history.
 Be encouraging, scientifically accurate but accessible, and concise.
 IMPORTANT: You MUST reply in the following language: ${language === 'pt' ? 'Portuguese' : language === 'es' ? 'Spanish' : language === 'fr' ? 'French' : 'English'}.

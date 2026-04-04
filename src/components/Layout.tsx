@@ -94,7 +94,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
           <div className="bg-green-100 p-2 rounded-lg">
             <Activity className="w-6 h-6 text-green-600" />
           </div>
-          <span className="font-bold text-xl text-gray-900">JuiceHealth</span>
+          <span className="font-bold text-xl text-gray-900">SucoSaúde</span>
         </div>
         
         <div className="flex flex-row md:flex-col w-full p-2 md:p-4 gap-1 md:gap-2">
@@ -168,7 +168,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
         <div className="md:hidden bg-white p-4 border-b border-gray-200 flex justify-between items-center sticky top-0 z-10">
           <div className="flex items-center gap-2">
             <Activity className="w-6 h-6 text-green-600" />
-            <span className="font-bold text-lg text-gray-900">JuiceHealth</span>
+            <span className="font-bold text-lg text-gray-900">SucoSaúde</span>
           </div>
           <div className="flex items-center gap-4">
             <button onClick={() => setShowDisclaimer(true)} className="text-amber-600 hover:text-amber-700">

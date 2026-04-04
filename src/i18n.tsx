@@ -10,7 +10,7 @@ interface Translations {
 
 const translations: Translations = {
   en: {
-    'app.title': 'JuiceHealth Pro',
+    'app.title': 'SucoSaúde',
     'app.subtitle': 'Your complete health consultative system for juice recipes and tracking.',
     'nav.dashboard': 'Dashboard',
     'nav.recipes': 'Recipes',
@@ -76,7 +76,7 @@ const translations: Translations = {
     'ai.title': 'AI Health Consultant',
     'ai.poweredBy': 'Powered by Gemini',
     'ai.placeholder': 'Ask about juice benefits, your history, or recipes...',
-    'ai.defaultGreeting': 'Hello! I am your JuiceHealth AI Consultant. I can analyze your juice consumption history and answer questions about juice benefits, combinations, and health. How can I help you today?',
+    'ai.defaultGreeting': 'Hello! I am your SucoSaúde AI Consultant. I can analyze your juice consumption history and answer questions about juice benefits, combinations, and health. How can I help you today?',
     'ai.error': 'Sorry, I encountered an error while processing your request. Please try again.',
     'disclaimer.title': 'Disclaimer / Warning',
     'disclaimer.p1': 'The information provided by this application is for educational purposes and in no way can substitute the functions of a health professional. The advice and treatments indicated are generic and, therefore, cannot take into account the specific circumstances of each person. A diagnosis of a disease must be made by a qualified professional; therefore, in the face of pathological symptoms, self-medication is not advisable.',
@@ -93,7 +93,7 @@ const translations: Translations = {
     'guide.p6': 'Our main goal is that the knowledge and practices shared in this system serve as valuable tools to provide more health, longevity, well-being, and joy in your daily life.'
   },
   pt: {
-    'app.title': 'JuiceHealth Pro',
+    'app.title': 'SucoSaúde',
     'app.subtitle': 'Seu sistema consultivo completo de saúde para receitas de sucos e acompanhamento.',
     'nav.dashboard': 'Painel',
     'nav.recipes': 'Receitas',
@@ -159,7 +159,7 @@ const translations: Translations = {
     'ai.title': 'Consultor de Saúde IA',
     'ai.poweredBy': 'Desenvolvido por Gemini',
     'ai.placeholder': 'Pergunte sobre benefícios de sucos, seu histórico ou receitas...',
-    'ai.defaultGreeting': 'Olá! Sou seu Consultor IA JuiceHealth. Posso analisar seu histórico de consumo de sucos e responder perguntas sobre benefícios, combinações e saúde. Como posso ajudar hoje?',
+    'ai.defaultGreeting': 'Olá! Sou seu Consultor IA SucoSaúde. Posso analisar seu histórico de consumo de sucos e responder perguntas sobre benefícios, combinações e saúde. Como posso ajudar hoje?',
     'ai.error': 'Desculpe, encontrei um erro ao processar sua solicitação. Por favor, tente novamente.',
     'disclaimer.title': 'Advertência',
     'disclaimer.p1': 'As informações fornecidas por este aplicativo têm propósitos educativos e de modo nenhum podem substituir as funções de um profissional de saúde. Os conselhos e tratamentos indicados são genéricos e, portanto, não podem ter em conta as circunstâncias específicas de cada pessoa. É necessário que o diagnóstico de uma doença seja feito por um profissional qualificado, por isso, ante sintomas patológicos, não convém automedicar-se.',
@@ -176,7 +176,7 @@ const translations: Translations = {
     'guide.p6': 'O nosso objetivo maior é que o conhecimento e as práticas compartilhadas neste sistema sejam ferramentas valiosas para proporcionar mais saúde, longevidade, bem-estar e alegria no seu dia a dia.'
   },
   es: {
-    'app.title': 'JuiceHealth Pro',
+    'app.title': 'SucoSaúde',
     'app.subtitle': 'Tu sistema consultivo de salud completo para recetas de jugos y seguimiento.',
     'nav.dashboard': 'Panel',
     'nav.recipes': 'Recetas',
@@ -242,7 +242,7 @@ const translations: Translations = {
     'ai.title': 'Consultor de Salud IA',
     'ai.poweredBy': 'Impulsado por Gemini',
     'ai.placeholder': 'Pregunta sobre beneficios de jugos, tu historial o recetas...',
-    'ai.defaultGreeting': '¡Hola! Soy tu Consultor IA JuiceHealth. Puedo analizar tu historial de consumo de jugos y responder preguntas sobre beneficios, combinaciones y salud. ¿Cómo puedo ayudarte hoy?',
+    'ai.defaultGreeting': '¡Hola! Soy tu Consultor IA SucoSaúde. Puedo analizar tu historial de consumo de jugos y responder preguntas sobre beneficios, combinaciones y salud. ¿Cómo puedo ayudarte hoy?',
     'ai.error': 'Lo siento, encontré un error al procesar tu solicitud. Por favor, inténtalo de nuevo.',
     'disclaimer.title': 'Advertencia',
     'disclaimer.p1': 'La información proporcionada por esta aplicación tiene fines educativos y de ninguna manera puede sustituir las funciones de un profesional de la salud. Los consejos y tratamientos indicados son genéricos y, por lo tanto, no pueden tener en cuenta las circunstancias específicas de cada persona. Es necesario que el diagnóstico de una enfermedad sea realizado por un profesional calificado, por lo tanto, ante síntomas patológicos, no es aconsejable automedicarse.',
@@ -259,7 +259,7 @@ const translations: Translations = {
     'guide.p6': 'Nuestro principal objetivo es que el conocimiento y las prácticas compartidas en este sistema sirvan como herramientas valiosas para proporcionar más salud, longevidad, bienestar y alegría en tu vida diaria.'
   },
   fr: {
-    'app.title': 'JuiceHealth Pro',
+    'app.title': 'SucoSaúde',
     'app.subtitle': 'Votre système consultatif de santé complet pour les recettes de jus et le suivi.',
     'nav.dashboard': 'Tableau de bord',
     'nav.recipes': 'Recettes',
@@ -325,7 +325,7 @@ const translations: Translations = {
     'ai.title': 'Consultant Santé IA',
     'ai.poweredBy': 'Propulsé par Gemini',
     'ai.placeholder': 'Posez des questions sur les avantages des jus, votre historique ou des recettes...',
-    'ai.defaultGreeting': 'Bonjour ! Je suis votre Consultant IA JuiceHealth. Je peux analyser votre historique de consommation de jus et répondre à vos questions sur les avantages, les combinaisons et la santé. Comment puis-je vous aider aujourd\'hui ?',
+    'ai.defaultGreeting': 'Bonjour ! Je suis votre Consultant IA SucoSaúde. Je peux analyser votre historique de consommation de jus et répondre à vos questions sur les avantages, les combinaisons et la santé. Comment puis-je vous aider aujourd\'hui ?',
     'ai.error': 'Désolé, j\'ai rencontré une erreur lors du traitement de votre demande. Veuillez réessayer.',
     'disclaimer.title': 'Avertissement',
     'disclaimer.p1': 'Les informations fournies par cette application ont des fins éducatives et ne peuvent en aucun cas se substituer aux fonctions d\'un professionnel de la santé. Les conseils et traitements indiqués sont génériques et ne peuvent donc pas tenir compte des circonstances spécifiques de chaque personne. Il est nécessaire que le diagnostic d\'une maladie soit posé par un professionnel qualifié, par conséquent, face à des symptômes pathologiques, l\'automédication n\'est pas conseillée.',
