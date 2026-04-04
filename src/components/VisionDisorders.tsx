@@ -58,10 +58,9 @@ export const VisionDisorders: React.FC = () => {
       >
         <div className="absolute inset-0">
           <img
-            src="https://storage.googleapis.com/aistudio-user-uploads-us-central1/project-678502804561/0d683693-01c3-426d-a1c2-3e2b2024b172/image.png"
+            src="/image002.png"
             alt="Óculos e teste de visão"
             className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-slate-900/20 backdrop-blur-[1px]"></div>
         </div>
