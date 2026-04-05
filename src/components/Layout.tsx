@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useAuth } from './AuthProvider';
 import { useLanguage, Language } from '../i18n';
 import { loginWithGoogle, logout } from '../firebase';
-import { Activity, BookOpen, PlusCircle, MessageCircle, LogOut, AlertTriangle, BookText, Eye, ChevronDown, Check } from 'lucide-react';
+import { Activity, BookOpen, PlusCircle, MessageCircle, LogOut, AlertTriangle, BookText, Eye, ChevronDown, Check, Wand2 } from 'lucide-react';
 import { DisclaimerModal } from './DisclaimerModal';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -261,11 +261,12 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
   }
 
   const navItems = [
-    { id: 'dashboard', label: t('nav.dashboard'), icon: Activity },
-    { id: 'recipes',   label: t('nav.recipes'),   icon: BookOpen },
-    { id: 'custom',    label: t('nav.custom'),     icon: PlusCircle },
-    { id: 'consult',   label: t('nav.consult'),    icon: MessageCircle },
-    { id: 'guide',     label: t('nav.guide'),      icon: BookText },
+    { id: 'dashboard',  label: t('nav.dashboard'), icon: Activity },
+    { id: 'recipes',    label: t('nav.recipes'),   icon: BookOpen },
+    { id: 'generator',  label: 'Gerador IA',       icon: Wand2 },
+    { id: 'custom',     label: t('nav.custom'),    icon: PlusCircle },
+    { id: 'consult',    label: t('nav.consult'),   icon: MessageCircle },
+    { id: 'guide',      label: t('nav.guide'),     icon: BookText },
   ];
 
   return (

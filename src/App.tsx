@@ -16,6 +16,7 @@ import { EducationalGuide } from './components/EducationalGuide';
 import { VisionDisorders } from './components/VisionDisorders';
 import { ThemePage } from './components/ThemePage';
 import { THEMES } from './data/themes';
+import { JuiceGenerator } from './components/JuiceGenerator';
 
 const THEME_IDS = ['imunidade', 'energia', 'digestao', 'pele', 'coracao', 'detox'];
 
@@ -54,6 +55,8 @@ function MainApp() {
         return <Dashboard />;
       case 'recipes':
         return <RecipeLibrary onSelectRecipe={setSelectedRecipeId} onNavigate={setActiveTab} />;
+      case 'generator':
+        return <JuiceGenerator />;
       case 'custom':
         return <CustomJuice />;
       case 'consult':
