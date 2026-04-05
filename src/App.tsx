@@ -18,7 +18,7 @@ import { ThemePage } from './components/ThemePage';
 import { THEMES } from './data/themes';
 import { JuiceGenerator } from './components/JuiceGenerator';
 
-const THEME_IDS = ['imunidade', 'energia', 'digestao', 'pele', 'coracao', 'detox'];
+const THEME_IDS = ['nervo', 'cardiovascular', 'sangue', 'respiratorio', 'figado', 'estomago', 'intestino', 'urinario', 'reprodutor', 'metabolismo', 'locomotor', 'pele', 'imunologico'];
 
 function MainApp() {
   const [activeTab, setActiveTab] = useState('dashboard');

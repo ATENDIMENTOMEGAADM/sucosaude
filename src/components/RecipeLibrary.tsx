@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../i18n';
-import { Search, Eye, Leaf, Clock, ChefHat, Sparkles, ArrowRight, SlidersHorizontal, X, Shield, Zap, Heart, Wind, FlaskConical, Sun } from 'lucide-react';
+import {
+  Search, Eye, Leaf, Clock, ChefHat, Sparkles, ArrowRight, SlidersHorizontal, X,
+  Shield, Zap, Heart, Wind, Brain, Droplet, Activity, Baby, Bone, FlaskConical, Apple,
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface RecipeLibraryProps {
@@ -16,134 +19,260 @@ export const RecipeLibrary: React.FC<RecipeLibraryProps> = ({ onNavigate }) => {
   const themeCards = [
     {
       id: 'vision',
-      title: t('vision.title'),
-      theme: 'Saúde Ocular',
+      title: 'Transtornos da Visão',
+      theme: 'Olhos',
       category: 'olhos',
-      description: 'Sucos ricos em antioxidantes, luteína e zeaxantina para proteger sua visão e prevenir o envelhecimento ocular.',
+      description: 'Sucos ricos em luteína, zeaxantina e vitamina A para proteger a retina, prevenir catarata e degeneração macular.',
       img: '/juices.png',
       icon: <Eye className="w-5 h-5" />,
       accentFrom: 'from-blue-500',
       accentTo: 'to-indigo-600',
       glowColor: 'shadow-blue-500/20',
       badgeColor: 'bg-blue-500/15 text-blue-400 border-blue-500/20',
-      keywords: ['olhos', 'visão', 'vision', 'eyes', 'luteína'],
+      keywords: ['olhos', 'visão', 'luteína', 'retina', 'catarata'],
       prepTime: '10 min',
       difficulty: 'Fácil',
-      benefits: ['Vitamina A', 'Antioxidantes', 'Luteína'],
+      benefits: ['Luteína', 'Vitamina A', 'Zeaxantina'],
     },
     {
-      id: 'imunidade',
-      title: 'Imunidade & Defesas',
-      theme: 'Imunidade',
-      category: 'imunidade',
-      description: 'Vitamina C, zinco e adaptógenos para fortalecer suas defesas naturais e proteger o organismo de infecções.',
+      id: 'nervo',
+      title: 'Sistema Nervoso',
+      theme: 'Nervoso',
+      category: 'nervoso',
+      description: 'Bebidas com triptofano, melatonina e vitaminas B para ansiedade, insônia, depressão e proteção neurológica.',
       img: '/juices.png',
-      icon: <Shield className="w-5 h-5" />,
+      icon: <Brain className="w-5 h-5" />,
+      accentFrom: 'from-violet-500',
+      accentTo: 'to-purple-600',
+      glowColor: 'shadow-violet-500/20',
+      badgeColor: 'bg-violet-500/15 text-violet-400 border-violet-500/20',
+      keywords: ['nervoso', 'ansiedade', 'insônia', 'depressão', 'memória'],
+      prepTime: '5 min',
+      difficulty: 'Fácil',
+      benefits: ['Triptofano', 'Melatonina', 'Vitaminas B'],
+    },
+    {
+      id: 'cardiovascular',
+      title: 'Sistema Cardiovascular',
+      theme: 'Coração',
+      category: 'cardiovascular',
+      description: 'Flavonoides, nitratos e antioxidantes para reduzir colesterol, controlar pressão e fortalecer o coração.',
+      img: '/juices.png',
+      icon: <Heart className="w-5 h-5" />,
+      accentFrom: 'from-red-500',
+      accentTo: 'to-rose-600',
+      glowColor: 'shadow-red-500/20',
+      badgeColor: 'bg-red-500/15 text-red-400 border-red-500/20',
+      keywords: ['coração', 'cardiovascular', 'pressão', 'colesterol', 'artérias'],
+      prepTime: '8 min',
+      difficulty: 'Fácil',
+      benefits: ['Flavonoides', 'Nitratos', 'Licopeno'],
+    },
+    {
+      id: 'sangue',
+      title: 'Sangue',
+      theme: 'Sangue',
+      category: 'sangue',
+      description: 'Ferro, ácido fólico e clorofila para combater anemia, enriquecer o sangue e melhorar a circulação.',
+      img: '/juices.png',
+      icon: <Droplet className="w-5 h-5" />,
+      accentFrom: 'from-rose-500',
+      accentTo: 'to-red-600',
+      glowColor: 'shadow-rose-500/20',
+      badgeColor: 'bg-rose-500/15 text-rose-400 border-rose-500/20',
+      keywords: ['sangue', 'anemia', 'ferro', 'clorofila', 'hemoglobina'],
+      prepTime: '5 min',
+      difficulty: 'Fácil',
+      benefits: ['Ferro', 'Clorofila', 'Ácido Fólico'],
+    },
+    {
+      id: 'respiratorio',
+      title: 'Sistema Respiratório',
+      theme: 'Respiração',
+      category: 'respiratorio',
+      description: 'Bebidas expectorantes, broncodilatadoras e antiinflamatórias para gripe, asma, bronquite e tosse.',
+      img: '/juices.png',
+      icon: <Wind className="w-5 h-5" />,
+      accentFrom: 'from-sky-500',
+      accentTo: 'to-cyan-600',
+      glowColor: 'shadow-sky-500/20',
+      badgeColor: 'bg-sky-500/15 text-sky-400 border-sky-500/20',
+      keywords: ['respiratório', 'asma', 'bronquite', 'tosse', 'pulmão'],
+      prepTime: '8 min',
+      difficulty: 'Fácil',
+      benefits: ['Expectorante', 'Vitamina C', 'Broncodilatador'],
+    },
+    {
+      id: 'figado',
+      title: 'Fígado',
+      theme: 'Fígado',
+      category: 'figado',
+      description: 'Silimarina, clorofila e fitoquímicos que estimulam e protegem o fígado, favorecendo a eliminação de toxinas.',
+      img: '/juices.png',
+      icon: <Activity className="w-5 h-5" />,
+      accentFrom: 'from-amber-500',
+      accentTo: 'to-yellow-600',
+      glowColor: 'shadow-amber-500/20',
+      badgeColor: 'bg-amber-500/15 text-amber-400 border-amber-500/20',
+      keywords: ['fígado', 'hepatite', 'detox', 'silimarina', 'colelitiase'],
+      prepTime: '5 min',
+      difficulty: 'Fácil',
+      benefits: ['Silimarina', 'Clorofila', 'Depurativo'],
+    },
+    {
+      id: 'estomago',
+      title: 'Estômago',
+      theme: 'Estômago',
+      category: 'estomago',
+      description: 'Bebidas com propriedades antiácidas, cicatrizantes e digestivas para gastrite, úlcera e refluxo.',
+      img: '/juices.png',
+      icon: <FlaskConical className="w-5 h-5" />,
       accentFrom: 'from-orange-500',
-      accentTo: 'to-amber-500',
+      accentTo: 'to-amber-600',
       glowColor: 'shadow-orange-500/20',
       badgeColor: 'bg-orange-500/15 text-orange-400 border-orange-500/20',
-      keywords: ['imunidade', 'defesa', 'vitamina c', 'zinco', 'resfriado'],
+      keywords: ['estômago', 'gastrite', 'úlcera', 'refluxo', 'digestão'],
       prepTime: '5 min',
       difficulty: 'Fácil',
-      benefits: ['Vitamina C', 'Zinco', 'Adaptógenos'],
+      benefits: ['Antiácido', 'Cicatrizante', 'Digestivo'],
     },
     {
-      id: 'energia',
-      title: 'Energia & Foco',
-      theme: 'Energia',
-      category: 'energia',
-      description: 'Combinações com complexo B, magnésio e adaptógenos para vitalidade e clareza mental sem cafeína artificial.',
-      img: '/juices.png',
-      icon: <Zap className="w-5 h-5" />,
-      accentFrom: 'from-yellow-400',
-      accentTo: 'to-amber-500',
-      glowColor: 'shadow-yellow-500/20',
-      badgeColor: 'bg-yellow-500/15 text-yellow-500 border-yellow-500/20',
-      keywords: ['energia', 'foco', 'cansaço', 'disposição', 'matcha'],
-      prepTime: '5 min',
-      difficulty: 'Fácil',
-      benefits: ['Complexo B', 'Magnésio', 'L-teanina'],
-    },
-    {
-      id: 'digestao',
-      title: 'Digestão & Intestino',
-      theme: 'Digestão',
-      category: 'digestao',
-      description: 'Enzimas digestivas, probióticos naturais e fibras solúveis para um intestino saudável e microbioma equilibrado.',
+      id: 'intestino',
+      title: 'Intestino',
+      theme: 'Intestino',
+      category: 'intestino',
+      description: 'Fibras, probióticos e mucilagens para constipação, diarreias, síndrome do intestino irritável e inflamações intestinais.',
       img: '/juices.png',
       icon: <Leaf className="w-5 h-5" />,
-      accentFrom: 'from-teal-400',
-      accentTo: 'to-cyan-500',
+      accentFrom: 'from-teal-500',
+      accentTo: 'to-emerald-600',
       glowColor: 'shadow-teal-500/20',
       badgeColor: 'bg-teal-500/15 text-teal-400 border-teal-500/20',
-      keywords: ['digestão', 'intestino', 'constipação', 'probiótico', 'enzimas'],
+      keywords: ['intestino', 'constipação', 'diarreia', 'cólon', 'intestino irritável'],
       prepTime: '5 min',
       difficulty: 'Fácil',
-      benefits: ['Enzimas', 'Probióticos', 'Fibras'],
+      benefits: ['Fibras', 'Probióticos', 'Mucilagem'],
+    },
+    {
+      id: 'urinario',
+      title: 'Aparelho Urinário',
+      theme: 'Urinário',
+      category: 'urinario',
+      description: 'Bebidas diuréticas, antisépticas e alcalinizantes para cistite, cálculos renais, infecção urinária e retenção.',
+      img: '/juices.png',
+      icon: <Droplet className="w-5 h-5" />,
+      accentFrom: 'from-cyan-500',
+      accentTo: 'to-blue-600',
+      glowColor: 'shadow-cyan-500/20',
+      badgeColor: 'bg-cyan-500/15 text-cyan-400 border-cyan-500/20',
+      keywords: ['urinário', 'cistite', 'rim', 'cálculo', 'diurético'],
+      prepTime: '5 min',
+      difficulty: 'Fácil',
+      benefits: ['Diurético', 'Antiséptico', 'Alcalinizante'],
+    },
+    {
+      id: 'reprodutor',
+      title: 'Aparelho Reprodutor',
+      theme: 'Reprodutor',
+      category: 'reprodutor',
+      description: 'Vitaminas E, C e fitoestrogênios para saúde hormonal, fertilidade, menopausa e próstata.',
+      img: '/juices.png',
+      icon: <Baby className="w-5 h-5" />,
+      accentFrom: 'from-pink-500',
+      accentTo: 'to-fuchsia-600',
+      glowColor: 'shadow-pink-500/20',
+      badgeColor: 'bg-pink-500/15 text-pink-400 border-pink-500/20',
+      keywords: ['reprodutor', 'menopausa', 'próstata', 'fertilidade', 'hormônios'],
+      prepTime: '5 min',
+      difficulty: 'Fácil',
+      benefits: ['Vitamina E', 'Fitoestrogênios', 'Antioxidante'],
+    },
+    {
+      id: 'metabolismo',
+      title: 'Metabolismo',
+      theme: 'Metabolismo',
+      category: 'metabolismo',
+      description: 'Bebidas que regulam glicose, colesterol e ácido úrico para diabetes, obesidade, gota e dislipidemia.',
+      img: '/juices.png',
+      icon: <Zap className="w-5 h-5" />,
+      accentFrom: 'from-lime-500',
+      accentTo: 'to-green-600',
+      glowColor: 'shadow-lime-500/20',
+      badgeColor: 'bg-lime-500/15 text-lime-600 border-lime-500/20',
+      keywords: ['metabolismo', 'diabetes', 'obesidade', 'gota', 'colesterol'],
+      prepTime: '5 min',
+      difficulty: 'Fácil',
+      benefits: ['Regulador Glicose', 'Antiobésidade', 'Antioxidante'],
+    },
+    {
+      id: 'locomotor',
+      title: 'Aparelho Locomotor',
+      theme: 'Locomotor',
+      category: 'locomotor',
+      description: 'Silício, cálcio e antiinflamatórios naturais para artrite, reumatismo, osteoporose e dores musculares.',
+      img: '/juices.png',
+      icon: <Bone className="w-5 h-5" />,
+      accentFrom: 'from-slate-500',
+      accentTo: 'to-gray-600',
+      glowColor: 'shadow-slate-500/20',
+      badgeColor: 'bg-slate-500/15 text-slate-400 border-slate-500/20',
+      keywords: ['locomotor', 'artrite', 'reumatismo', 'ossos', 'articulações'],
+      prepTime: '8 min',
+      difficulty: 'Fácil',
+      benefits: ['Silício', 'Cálcio', 'Antiinflamatório'],
     },
     {
       id: 'pele',
-      title: 'Pele & Beleza',
-      theme: 'Beleza',
+      title: 'Pele',
+      theme: 'Pele',
       category: 'pele',
-      description: 'Colágeno vegetal, silício orgânico e antioxidantes que combatem o envelhecimento e deixam a pele radiante.',
+      description: 'Vitaminas A, C e E, silício e antioxidantes que combatem acne, eczema, psoríase e o envelhecimento cutâneo.',
       img: '/juices.png',
-      icon: <Sun className="w-5 h-5" />,
-      accentFrom: 'from-pink-400',
-      accentTo: 'to-rose-500',
-      glowColor: 'shadow-pink-500/20',
-      badgeColor: 'bg-pink-500/15 text-pink-400 border-pink-500/20',
-      keywords: ['pele', 'beleza', 'colágeno', 'antienvelhecimento', 'acne'],
+      icon: <Apple className="w-5 h-5" />,
+      accentFrom: 'from-rose-400',
+      accentTo: 'to-pink-500',
+      glowColor: 'shadow-rose-400/20',
+      badgeColor: 'bg-rose-400/15 text-rose-400 border-rose-400/20',
+      keywords: ['pele', 'acne', 'eczema', 'psoríase', 'colágeno'],
       prepTime: '5 min',
       difficulty: 'Fácil',
-      benefits: ['Vitamina C', 'Silício', 'Colágeno'],
+      benefits: ['Vitamina A', 'Vitamina C', 'Silício'],
     },
     {
-      id: 'coracao',
-      title: 'Saúde do Coração',
-      theme: 'Coração',
-      category: 'coracao',
-      description: 'Flavonoides, ômega-3 vegetal e nitratos naturais para reduzir colesterol, controlar pressão e proteger o coração.',
+      id: 'imunologico',
+      title: 'Sistema Imunológico',
+      theme: 'Imunidade',
+      category: 'imunologico',
+      description: 'Vitamina C, zinco e fitoquímicos imunoestimulantes para fortalecer as defesas e combater infecções.',
       img: '/juices.png',
-      icon: <Heart className="w-5 h-5" />,
-      accentFrom: 'from-red-400',
-      accentTo: 'to-rose-500',
-      glowColor: 'shadow-red-500/20',
-      badgeColor: 'bg-red-500/15 text-red-400 border-red-500/20',
-      keywords: ['coração', 'pressão', 'colesterol', 'cardiovascular', 'beterraba'],
-      prepTime: '8 min',
-      difficulty: 'Fácil',
-      benefits: ['Flavonoides', 'Nitratos', 'Polifenóis'],
-    },
-    {
-      id: 'detox',
-      title: 'Detox & Purificação',
-      theme: 'Detox',
-      category: 'detox',
-      description: 'Clorofila, silimarina e fitoquímicos que estimulam fígado, rins e sistema linfático na eliminação de toxinas.',
-      img: '/juices.png',
-      icon: <FlaskConical className="w-5 h-5" />,
-      accentFrom: 'from-violet-400',
-      accentTo: 'to-purple-500',
-      glowColor: 'shadow-violet-500/20',
-      badgeColor: 'bg-violet-500/15 text-violet-400 border-violet-500/20',
-      keywords: ['detox', 'fígado', 'purificação', 'toxinas', 'clorofila'],
+      icon: <Shield className="w-5 h-5" />,
+      accentFrom: 'from-emerald-500',
+      accentTo: 'to-green-600',
+      glowColor: 'shadow-emerald-500/20',
+      badgeColor: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/20',
+      keywords: ['imunidade', 'defesa', 'vitamina c', 'zinco', 'infecção'],
       prepTime: '5 min',
       difficulty: 'Fácil',
-      benefits: ['Clorofila', 'Silimarina', 'Glutationa'],
+      benefits: ['Vitamina C', 'Zinco', 'Imunoestimulante'],
     },
   ];
 
   const filters = [
-    { id: 'all',       label: 'Todos',         icon: <Sparkles className="w-3.5 h-3.5" /> },
-    { id: 'olhos',     label: 'Olhos',          icon: <Eye className="w-3.5 h-3.5" /> },
-    { id: 'imunidade', label: 'Imunidade',       icon: <Shield className="w-3.5 h-3.5" /> },
-    { id: 'energia',   label: 'Energia',         icon: <Zap className="w-3.5 h-3.5" /> },
-    { id: 'digestao',  label: 'Digestão',        icon: <Leaf className="w-3.5 h-3.5" /> },
-    { id: 'pele',      label: 'Pele',            icon: <Sun className="w-3.5 h-3.5" /> },
-    { id: 'coracao',   label: 'Coração',         icon: <Heart className="w-3.5 h-3.5" /> },
-    { id: 'detox',     label: 'Detox',           icon: <Wind className="w-3.5 h-3.5" /> },
+    { id: 'all',           label: 'Todos',        icon: <Sparkles className="w-3.5 h-3.5" /> },
+    { id: 'olhos',         label: 'Olhos',         icon: <Eye className="w-3.5 h-3.5" /> },
+    { id: 'nervoso',       label: 'Nervoso',        icon: <Brain className="w-3.5 h-3.5" /> },
+    { id: 'cardiovascular',label: 'Coração',        icon: <Heart className="w-3.5 h-3.5" /> },
+    { id: 'sangue',        label: 'Sangue',         icon: <Droplet className="w-3.5 h-3.5" /> },
+    { id: 'respiratorio',  label: 'Respiração',     icon: <Wind className="w-3.5 h-3.5" /> },
+    { id: 'figado',        label: 'Fígado',         icon: <Activity className="w-3.5 h-3.5" /> },
+    { id: 'estomago',      label: 'Estômago',       icon: <FlaskConical className="w-3.5 h-3.5" /> },
+    { id: 'intestino',     label: 'Intestino',      icon: <Leaf className="w-3.5 h-3.5" /> },
+    { id: 'urinario',      label: 'Urinário',       icon: <Droplet className="w-3.5 h-3.5" /> },
+    { id: 'reprodutor',    label: 'Reprodutor',     icon: <Baby className="w-3.5 h-3.5" /> },
+    { id: 'metabolismo',   label: 'Metabolismo',    icon: <Zap className="w-3.5 h-3.5" /> },
+    { id: 'locomotor',     label: 'Locomotor',      icon: <Bone className="w-3.5 h-3.5" /> },
+    { id: 'pele',          label: 'Pele',           icon: <Apple className="w-3.5 h-3.5" /> },
+    { id: 'imunologico',   label: 'Imunidade',      icon: <Shield className="w-3.5 h-3.5" /> },
   ];
 
   const filtered = themeCards.filter(card => {
@@ -170,7 +299,7 @@ export const RecipeLibrary: React.FC<RecipeLibraryProps> = ({ onNavigate }) => {
           <div className="flex items-center gap-2 mb-2">
             <span className="text-xs font-bold text-green-500 uppercase tracking-widest">Biblioteca</span>
             <span className="w-1 h-1 rounded-full bg-slate-400" />
-            <span className="text-xs text-slate-400">{themeCards.length} tema{themeCards.length !== 1 ? 's' : ''}</span>
+            <span className="text-xs text-slate-400">{themeCards.length} sistema{themeCards.length !== 1 ? 's' : ''}</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
             {t('recipes.title')}
@@ -208,14 +337,14 @@ export const RecipeLibrary: React.FC<RecipeLibraryProps> = ({ onNavigate }) => {
           )}
         </div>
 
-        {/* Filter tabs */}
-        <div className="flex items-center gap-2 flex-wrap">
+        {/* Filter tabs — scrollable */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">
           <SlidersHorizontal className="w-4 h-4 text-slate-400 flex-shrink-0" />
           {filters.map(f => (
             <button
               key={f.id}
               onClick={() => setActiveFilter(f.id)}
-              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all duration-200 ${
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                 activeFilter === f.id
                   ? 'bg-green-500 text-white shadow-md shadow-green-500/30'
                   : 'bg-white border border-slate-200 text-slate-500 hover:border-green-300 hover:text-green-600'
@@ -260,13 +389,13 @@ export const RecipeLibrary: React.FC<RecipeLibraryProps> = ({ onNavigate }) => {
                 key={card.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.45, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -5, transition: { duration: 0.22 } }}
                 onClick={() => onNavigate(card.id)}
                 className={`group relative bg-white rounded-3xl overflow-hidden cursor-pointer border border-slate-100 shadow-lg ${card.glowColor} hover:shadow-2xl transition-shadow duration-300`}
               >
                 {/* Image */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
                   <img
                     src={card.img}
                     alt={card.title}
@@ -313,7 +442,7 @@ export const RecipeLibrary: React.FC<RecipeLibraryProps> = ({ onNavigate }) => {
 
                   {/* CTA */}
                   <div className={`flex items-center justify-between bg-gradient-to-r ${card.accentFrom} ${card.accentTo} text-white text-sm font-semibold px-4 py-3 rounded-2xl shadow-md transition-all duration-200 group-hover:shadow-lg`}>
-                    <span>Explorar receita</span>
+                    <span>Ver receitas</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                   </div>
                 </div>
