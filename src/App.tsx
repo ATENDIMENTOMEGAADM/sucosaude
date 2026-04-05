@@ -14,6 +14,10 @@ import { CustomJuice } from './components/CustomJuice';
 import { AIConsult } from './components/AIConsult';
 import { EducationalGuide } from './components/EducationalGuide';
 import { VisionDisorders } from './components/VisionDisorders';
+import { ThemePage } from './components/ThemePage';
+import { THEMES } from './data/themes';
+
+const THEME_IDS = ['imunidade', 'energia', 'digestao', 'pele', 'coracao', 'detox'];
 
 function MainApp() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -29,9 +33,18 @@ function MainApp() {
   const renderContent = () => {
     if (selectedRecipeId) {
       return (
-        <RecipeDetail 
-          recipeId={selectedRecipeId} 
-          onBack={() => setSelectedRecipeId(null)} 
+        <RecipeDetail
+          recipeId={selectedRecipeId}
+          onBack={() => setSelectedRecipeId(null)}
+        />
+      );
+    }
+
+    if (THEME_IDS.includes(activeTab)) {
+      return (
+        <ThemePage
+          data={THEMES[activeTab]}
+          onBack={() => setActiveTab('recipes')}
         />
       );
     }
